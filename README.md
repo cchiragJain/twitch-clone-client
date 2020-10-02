@@ -1,3 +1,11 @@
+# Branch index
+
+`master` -> navigation in react apps/react-router basic theory
+
+`react-navigation` -> setting up all the routes of our app
+
+<hr>
+
 <img src='./README.assets/Screenshot 2020-10-01 150518.png'>
 
 # React-Navigation
@@ -12,6 +20,6 @@
 
 <img src='./README.assets/router types.png'>
 
-# Branch index
+## Component Heiarchy
 
-`master` -> navigation in react apps/react-router basic theory
+<img src='./README.assets/header.png'>
