@@ -4,6 +4,8 @@
 
 `react-navigation` -> setting up all the routes of our app
 
+`react-authentication-oauth` -> setting up authentication using google oauth
+
 <hr>
 
 <img src='./README.assets/Screenshot 2020-10-01 150518.png'>
@@ -12,7 +14,7 @@
 
 <img src='./README.assets/Screenshot 2020-10-01 155303.png'>
 
-## Why usign <a> tags is a bad way of navigation
+## Why usign anchor tags is a bad way of navigation
 
 <img src='./README.assets/Screenshot 2020-10-01 173628.png'>
 
@@ -23,3 +25,8 @@
 ## Component Heiarchy
 
 <img src='./README.assets/header.png'>
+
+# Oauth authentication
+
+<img src='./README.assets/oauthdiff.png'>
+<img src='./README.assets/Screenshot 2020-10-02 200704.png'>
