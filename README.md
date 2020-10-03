@@ -30,3 +30,9 @@
 
 <img src='./README.assets/oauthdiff.png'>
 <img src='./README.assets/Screenshot 2020-10-02 200704.png'>
+
+## Oauth flow
+
+<img src='./README.assets/oauthflow1.png'>
+
+<img src='./README.assets/oauthsteps.png'>
