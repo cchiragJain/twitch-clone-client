@@ -36,3 +36,13 @@
 <img src='./README.assets/oauthflow1.png'>
 
 <img src='./README.assets/oauthsteps.png'>
+
+# Redux
+
+## Loosely redux(this is what we are following)
+
+<img src='./README.assets/redux archeitecture.png'>
+
+## Completely redux
+
+<img src='./README.assets/completereduxarch.png'>
