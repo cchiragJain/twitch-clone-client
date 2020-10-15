@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import App from './components/App';
 import reducers from './reducers';
 
+// copied from redux-dev-tools github page to use dev tools
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducers, composeEnhancers(applyMiddleware()));
 

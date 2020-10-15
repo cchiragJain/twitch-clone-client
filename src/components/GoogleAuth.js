@@ -13,7 +13,6 @@ class GoogleAuth extends React.Component {
 					scope: 'email',
 				})
 				.then(() => {
-					// remember how this runs at initialisation
 					this.auth = window.gapi.auth2.getAuthInstance();
 					this.onAuthChange(this.auth.isSignedIn.get());
 					this.auth.isSignedIn.listen(this.onAuthChange);
@@ -21,7 +20,6 @@ class GoogleAuth extends React.Component {
 		});
 	}
 
-	// we don't have to get access to the login status by using the auth instance as this callback gets called with that
 	onAuthChange = isSignedIn => {
 		if (isSignedIn) {
 			this.props.signIn(this.auth.currentUser.get().getId());

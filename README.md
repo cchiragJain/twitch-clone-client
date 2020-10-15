@@ -6,6 +6,8 @@
 
 `react-authentication-oauth` -> setting up authentication using google oauth
 
+`forms-with-redux-form` -> submitting forms using redux-form
+
 <hr>
 
 <img src='./README.assets/Screenshot 2020-10-01 150518.png'>
@@ -46,3 +48,8 @@
 ## Completely redux
 
 <img src='./README.assets/completereduxarch.png'>
+
+# Redux-form
+
+<img src='./README.assets/formswithoutredux.png'>
+<img src='./README.assets/formswithreduxfroms.png'>
