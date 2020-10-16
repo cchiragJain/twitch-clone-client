@@ -1,5 +1,8 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+
+import { createStream } from '../../actions';
 
 class StreamCreate extends React.Component {
 	renderError({ error, touched }) {
@@ -11,22 +14,20 @@ class StreamCreate extends React.Component {
 			);
 		}
 	}
-	// formated renderInput to a arrow function to solve the this issue since it will be called inside from the field component the this keyword will have a different value and will not work for renderError
 	renderInput = ({ input, label, meta }) => {
 		const className = `field ${meta.error && meta.touched ? 'error' : ''}`;
 		return (
 			<div className={className}>
 				<label>{label}</label>
 				<input {...input} autoComplete="off" />
-				{/* <div>{meta.error}	</div> */}
 				{this.renderError(meta)}
 			</div>
 		);
 	};
 
-	onSubmit(formValues) {
-		console.log(formValues);
-	}
+	onSubmit = formValues => {
+		this.props.createStream(formValues);
+	};
 
 	render() {
 		return (
@@ -64,9 +65,9 @@ const validate = formValue => {
 	return errors;
 };
 
-// this reduxForm is exactly like the connect function like helping us to call the action creators and getting the form data
-export default reduxForm({
-	// this is the name of the form
+const wrappedForm = reduxForm({
 	form: 'streamCreate',
 	validate: validate,
 })(StreamCreate);
+
+export default connect(null, { createStream })(wrappedForm);
