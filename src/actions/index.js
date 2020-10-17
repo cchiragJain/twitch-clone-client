@@ -25,12 +25,17 @@ export const signOut = () => {
 // most of the action creators that make api requests of any kind have the same kind of syntax as these ones and also the middleware is applied to them in main index.js file
 
 // post posts the data to the api
-export const createStream = formValues => async dispatch => {
-	const response = await streams.post('/streams', formValues);
+// the thunk middleware actually calls in the function that we pass in here using another argument as well that is the getState which we can use to get our redux store state anytime
+export const createStream = formValues => async (dispatch, getState) => {
+	const { userId } = getState().auth;
+	const response = await streams.post('/streams', { ...formValues, userId });
+
 	dispatch({
 		type: CREATE_STREAM,
 		payload: response.data,
 	});
+
+	// we need to do some programmatic navigation here to make sure the user to go back to the route path
 };
 
 // get is how we get the data
