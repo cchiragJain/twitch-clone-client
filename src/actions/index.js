@@ -8,6 +8,7 @@ import {
 	EDIT_STREAM,
 	DELETE_STREAM,
 } from './types';
+import history from '../history';
 
 export const signIn = userId => {
 	return {
@@ -36,6 +37,7 @@ export const createStream = formValues => async (dispatch, getState) => {
 	});
 
 	// we need to do some programmatic navigation here to make sure the user to go back to the route path
+	history.push('/');
 };
 
 // get is how we get the data

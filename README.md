@@ -59,3 +59,12 @@
 # Rest-full convention
 
 <img src='./README.assets/restbasedreact.png'>
+
+## When to navigate users
+
+we cannot access this history object inside an action creator very easily
+<img src='./README.assets/whentonavigateusers.png'>
+
+## Programmatic navigation how?
+
+<img src='./README.assets/programmaticnavigation.png'>
