@@ -57,14 +57,18 @@ export const fetchStream = id => async dispatch => {
 	});
 };
 
-// put is used to updata data on a server
+// put is used to completely update data on a server changing all existing values and deleting values if one doesn't exist any more ( does not affect the id property )
+// patch only updates those values that are actually changed
+
 // we are putting the new formValues here to the existing id
 export const editStream = (id, formValues) => async dispatch => {
-	const response = await streams.put(`/streams/${id}`, formValues);
+	// const response = await streams.put(`/streams/${id}`, formValues);
+	const response = await streams.patch(`/streams/${id}`, formValues);
 	dispatch({
 		type: EDIT_STREAM,
 		payload: response.data,
 	});
+	history.push('/');
 };
 
 // delete is used to delete data from a server

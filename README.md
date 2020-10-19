@@ -68,3 +68,5 @@ we cannot access this history object inside an action creator very easily
 ## Programmatic navigation how?
 
 <img src='./README.assets/programmaticnavigation.png'>
+
+<img src='./README.assets/restfulconventionsall.png'>
