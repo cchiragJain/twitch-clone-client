@@ -1,7 +1,7 @@
 import React from 'react';
 // import { BrowserRouter, Route } from 'react-router-dom';
 // the BrowserRouter uses it's own history object therefore we are now using a plain router to make sure that we are in charge of the history now
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 
 import Header from './Header';
 import StreamCreate from './streams/StreamCreate';
@@ -18,12 +18,15 @@ const App = () => {
 			<Router history={history}>
 				<div>
 					<Header />
-					<Route path="/" exact component={StreamList} />
-					<Route path="/streams/new" exact component={StreamCreate} />
-					{/* a user can go to the edit page with the id now */}
-					<Route path="/streams/edit/:id" exact component={StreamEdit} />
-					<Route path="/streams/delete/:id" exact component={StreamDelete} />
-					<Route path="/streams/show" exact component={StreamShow} />
+					{/* we are importing switch as well to make sure that StreamCreate and StreamShow does not clash  */}
+					<Switch>
+						<Route path="/" exact component={StreamList} />
+						<Route path="/streams/new" exact component={StreamCreate} />
+						{/* a user can go to the edit page with the id now */}
+						<Route path="/streams/edit/:id" exact component={StreamEdit} />
+						<Route path="/streams/delete/:id" exact component={StreamDelete} />
+						<Route path="/streams/:id" exact component={StreamShow} />
+					</Switch>
 				</div>
 			</Router>
 		</div>
