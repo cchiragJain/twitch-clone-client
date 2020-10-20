@@ -14,8 +14,15 @@ class StreamEdit extends React.Component {
 	};
 
 	render() {
+		// console.log(this.props);
 		if (!this.props.stream) {
 			return <div>Loading...</div>;
+		}
+		if (
+			!this.props.auth ||
+			this.props.currentUserId !== this.props.stream.userId
+		) {
+			return <div>Please login with your account</div>;
 		}
 		return (
 			<div>
@@ -35,7 +42,12 @@ class StreamEdit extends React.Component {
 
 // ownProps helps us to get the props from the main component
 const mapStateToProps = (state, ownProps) => {
-	return { stream: state.streams[ownProps.match.params.id] };
+	// const id = ownProps.match.params.id;
+	return {
+		stream: state.streams[ownProps.match.params.id],
+		auth: state.auth.isSignedIn,
+		currentUserId: state.auth.userId,
+	};
 };
 
 export default connect(mapStateToProps, { fetchStream, editStream })(

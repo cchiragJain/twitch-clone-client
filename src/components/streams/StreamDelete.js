@@ -44,6 +44,13 @@ class StreamDelete extends React.Component {
 	}
 
 	render() {
+		if (
+			!this.props.auth ||
+			this.props.currentUserId !== this.props.stream.userId
+		) {
+			return <div>Please login with your account</div>;
+		}
+
 		return (
 			<Modal
 				title="Delete Stream"
@@ -58,6 +65,8 @@ class StreamDelete extends React.Component {
 const mapStateToProps = (state, ownProps) => {
 	return {
 		stream: state.streams[ownProps.match.params.id],
+		auth: state.auth.isSignedIn,
+		currentUserId: state.auth.userId,
 	};
 };
 
