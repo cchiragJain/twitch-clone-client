@@ -9,6 +9,7 @@ import StreamDelete from './streams/StreamDelete';
 import StreamEdit from './streams/StreamEdit';
 import StreamList from './streams/StreamList';
 import StreamShow from './streams/StreamShow';
+import StreamListSelf from './streams/StreamListSelf';
 import history from '../history';
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
 					{/* we are importing switch as well to make sure that StreamCreate and StreamShow does not clash  */}
 					<Switch>
 						<Route path="/" exact component={StreamList} />
+						<Route path="/streams/self" exact component={StreamListSelf} />
 						<Route path="/streams/new" exact component={StreamCreate} />
 						{/* a user can go to the edit page with the id now */}
 						<Route path="/streams/edit/:id" exact component={StreamEdit} />

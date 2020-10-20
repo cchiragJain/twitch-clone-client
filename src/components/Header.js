@@ -12,9 +12,9 @@ const Header = () => {
 				<Link to="/" className="item">
 					All Streams
 				</Link>
-				{/* <Link to="/streams/self" className="item">
+				<Link to="/streams/self" className="item">
 					My Streams
-				</Link> */}
+				</Link>
 				<GoogleAuth />
 			</div>
 		</div>
