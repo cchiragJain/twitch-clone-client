@@ -8,7 +8,9 @@
 
 `forms-with-redux-form` -> submitting forms using redux-form
 
-`rest-based-react-apps` ->
+`rest-based-react-apps` -> doing CRUD operations(fetch,edit,create)(get,post,patch) requests on a rest api
+
+`modals-with-react-portals` -> adding a modal to a react app using react portal and deleting from a rest api
 
 <hr>
 
