@@ -22,7 +22,7 @@ const App = () => {
 					<Route path="/streams/new" exact component={StreamCreate} />
 					{/* a user can go to the edit page with the id now */}
 					<Route path="/streams/edit/:id" exact component={StreamEdit} />
-					<Route path="/streams/delete" exact component={StreamDelete} />
+					<Route path="/streams/delete/:id" exact component={StreamDelete} />
 					<Route path="/streams/show" exact component={StreamShow} />
 				</div>
 			</Router>
