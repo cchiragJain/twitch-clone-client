@@ -12,6 +12,8 @@
 
 `modals-with-react-portals` -> adding a modal to a react app using react portal and deleting from a rest api
 
+`streaming-video` -> implementing flvjs and node-media-server to implement live streaming feature
+
 <hr>
 
 <img src='./README.assets/Screenshot 2020-10-01 150518.png'>
