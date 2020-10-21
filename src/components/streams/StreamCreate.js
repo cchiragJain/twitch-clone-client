@@ -10,6 +10,9 @@ class StreamCreate extends React.Component {
 	};
 
 	render() {
+		if (!this.props.auth.isSignedIn) {
+			return <div>Please Login!!!</div>;
+		}
 		return (
 			<div>
 				<h3>Create a Stream</h3>
@@ -18,4 +21,11 @@ class StreamCreate extends React.Component {
 		);
 	}
 }
-export default connect(null, { createStream })(StreamCreate);
+
+const mapStateToProps = state => {
+	return {
+		auth: state.auth,
+	};
+};
+
+export default connect(mapStateToProps, { createStream })(StreamCreate);
