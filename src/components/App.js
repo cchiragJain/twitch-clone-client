@@ -1,40 +1,37 @@
 import React from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+// import { BrowserRouter, Route } from 'react-router-dom';
+// the BrowserRouter uses it's own history object therefore we are now using a plain router to make sure that we are in charge of the history now
+import { Router, Route, Switch } from 'react-router-dom';
 
-// we can if we want to do navigation back and forth b/w the pages of our apps using traditional <a> tags but that is a bad approach. REFER README FILE FOR WHY
-const PageOne = () => {
-	return (
-		<div>
-			PageOne
-			{/* <a href='/pagetwo'>navigate to page two</a> */}
-			<Link to="/pagetwo">navigate to page two</Link>
-		</div>
-	);
-};
-
-const PageTwo = () => {
-	return (
-		<div>
-			PageTwo
-			<button>click me</button>
-			{/* <a href='/'>navigate to page one</a> */}
-			<Link to="/">navigate to page one</Link>
-		</div>
-	);
-};
+import Header from './Header';
+import StreamCreate from './streams/StreamCreate';
+import StreamDelete from './streams/StreamDelete';
+import StreamEdit from './streams/StreamEdit';
+import StreamList from './streams/StreamList';
+import StreamShow from './streams/StreamShow';
+import StreamListSelf from './streams/StreamListSelf';
+import history from '../history';
 
 const App = () => {
 	return (
-		<BrowserRouter>
-			<div>
-				{/* the path is the page url 
-						component is used to say display this page
-						exact is used to make sure that not all components gets rendered
-				*/}
-				<Route path="/" exact component={PageOne} />
-				<Route path="/pageTwo" component={PageTwo} />
-			</div>
-		</BrowserRouter>
+		<div className="ui container">
+			{/* passing in the history object that it uses our implementation of the history object */}
+			<Router history={history}>
+				<div>
+					<Header />
+					{/* we are importing switch as well to make sure that StreamCreate and StreamShow does not clash  */}
+					<Switch>
+						<Route path="/" exact component={StreamList} />
+						<Route path="/streams/self" exact component={StreamListSelf} />
+						<Route path="/streams/new" exact component={StreamCreate} />
+						{/* a user can go to the edit page with the id now */}
+						<Route path="/streams/edit/:id" exact component={StreamEdit} />
+						<Route path="/streams/delete/:id" exact component={StreamDelete} />
+						<Route path="/streams/:id" exact component={StreamShow} />
+					</Switch>
+				</div>
+			</Router>
+		</div>
 	);
 };
 
